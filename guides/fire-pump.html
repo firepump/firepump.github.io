@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>소방펌프 점검과 관리 — 소방설비 허브</title>
+<meta name="description" content="소방펌프 점검과 관리 가이드: 펌프 종류와 선정 기준, 정기 점검 항목, 압력 유지 방법과 흔한 고장 원인을 단계별로 정리했습니다.">
+<meta name="theme-color" content="#0f172a">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<style>
+:root{--navy:#0f172a;--navy2:#1e293b;--amber:#f59e0b;--amber-dark:#d97706;--amber-bg:#fef3c7;--bg:#f1f5f9;--card:#fff;--text:#0f172a;--muted:#64748b;--border:#e2e8f0;--green:#15803d;--green-bg:#dcfce7;--red:#b91c1c;--red-bg:#fee2e2;--radius:14px;--shadow:0 1px 3px rgba(15,23,42,.08),0 4px 14px rgba(15,23,42,.06)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans KR",Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
+.wrap{max-width:860px;margin:0 auto;padding:0 16px}
+a{color:var(--amber-dark)}
+header{background:var(--navy);color:#fff;position:sticky;top:0;z-index:50;box-shadow:0 2px 10px rgba(0,0,0,.25)}
+.header-in{display:flex;align-items:center;gap:14px;padding:13px 16px;max-width:1080px;margin:0 auto;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff;flex:1;min-width:200px}
+.brand .mark{width:38px;height:38px;border-radius:9px;background:var(--amber);color:var(--navy);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:19px;flex:none}
+.brand b{font-size:19px;letter-spacing:.2px}
+.brand b span{color:var(--amber)}
+.brand small{display:block;font-size:11.5px;color:#94a3b8;font-weight:400}
+nav.main-nav{display:flex;gap:4px;flex-wrap:wrap}
+nav.main-nav a{color:#cbd5e1;text-decoration:none;font-size:14px;font-weight:600;padding:8px 11px;border-radius:8px}
+nav.main-nav a:hover{background:var(--navy2);color:#fff}
+.article{padding:26px 0 12px}
+.back{margin-bottom:10px}
+.back a{font-weight:700;text-decoration:none}
+.back a:hover{text-decoration:underline}
+.crumb{font-size:12.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--amber-dark);margin-bottom:6px}
+.article h1{font-size:clamp(26px,4.5vw,34px);line-height:1.25;margin-bottom:10px}
+.lede{font-size:17px;color:#334155;margin-bottom:22px}
+.article h2{font-size:21px;margin:28px 0 8px;padding-top:6px;border-top:2px solid var(--amber);display:inline-block}
+.article h3{font-size:17px;margin:18px 0 6px}
+.article p{font-size:15.5px;color:#1e293b;margin-bottom:12px}
+.article ul,.article ol{margin:0 0 14px 22px;font-size:15.5px;color:#1e293b}
+.article li{margin-bottom:6px}
+.article table{border-collapse:collapse;width:100%;font-size:14px;margin:12px 0 16px;background:#fff;border-radius:10px;overflow:hidden;box-shadow:var(--shadow)}
+.article th{background:var(--navy);color:#fff;text-align:left;padding:10px 12px}
+.article td{padding:9px 12px;border-bottom:1px solid var(--border)}
+.article tr:nth-child(even) td{background:#f8fafc}
+.formula{font-size:13.5px;color:var(--muted);background:#fff;border:1px dashed var(--border);border-radius:8px;padding:10px 12px;margin:12px 0}
+.formula code{color:var(--navy);font-weight:600}
+.safety{background:var(--red-bg);border-left:4px solid var(--red);border-radius:10px;padding:14px 16px;margin:22px 0;font-size:14.5px;color:#7f1d1d}
+.related{background:var(--amber-bg);border:1px solid #fde68a;border-radius:12px;padding:16px 18px;margin:22px 0}
+.related h3{font-size:15px;margin:0 0 8px}
+.related ul{margin:0 0 0 20px}
+.related li{margin-bottom:4px}
+footer{background:var(--navy);color:#94a3b8;margin-top:44px;padding:30px 0 26px}
+footer .cols{display:grid;grid-template-columns:1fr;gap:20px}
+@media(min-width:640px){footer .cols{grid-template-columns:2fr 1fr 1fr}}
+footer h4{color:#fff;font-size:15px;margin-bottom:10px}
+footer p,footer a{font-size:13.5px;color:#94a3b8;text-decoration:none}
+footer a:hover{color:#fff}
+footer ul{list-style:none}
+footer li{margin-bottom:6px}
+.copy{border-top:1px solid #1e293b;margin-top:22px;padding-top:16px;font-size:12.5px;text-align:center}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-in">
+    <a class="brand" href="../index.html"><span class="mark">소</span><span><b>소방설비 <span>허브</span></b><small>firepump.github.io/</small></span></a>
+    <nav class="main-nav">
+      <a href="../index.html#calculators">계산기</a>
+      <a href="../index.html#reference">기준표</a>
+      <a href="../index.html#guides">가이드</a>
+      <a href="../index.html#faq">자주 묻는 질문</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap article">
+  <p class="back"><a href="../index.html">&larr; 소방설비 허브로 돌아가기</a></p>
+  <p class="crumb">가이드 / 소방펌프</p>
+  <h1>소방펌프 점검과 관리</h1>
+  <p class="lede">소방펌프는 소화전과 스프링클러에 물을 공급하는 핵심 설비입니다. 화재가 발생하면 소방펌프가 가동돼 높은 수압으로 물을 보내야 화재를 진압할 수 있습니다. 펌프가 고장 나면 아무리 좋은 스프링클러와 소화전이 있어도 소용이 없습니다. 이 가이드에서는 펌프 종류와 선정 기준, 정기 점검 항목, 압력 유지 방법과 흔한 고장 원인을 단계별로 정리했습니다.</p>
+
+  <h2>소방펌프의 종류와 구조</h2>
+  <p>소방펌프는 동력원에 따라 전동펌프와 엔진펌프로 나뉩니다. 전동펌프는 전기로 모터를 돌려 물을 공급하는 펌프로, 가장 널리 쓰입니다. 엔진펌프는 디젤 엔진으로 펌프를 돌리는 방식으로, 정전 시에도 작동할 수 있어 예비 펌프로 많이 사용합니다. 펌프 형태로는 원심펌프가 표준이며, 흡입한 물을 임펠러의 회전력으로 밀어내는 구조입니다. 소방펌프실에는 주펌프와 예비펌프, 충압펌프가 함께 설치되는 경우가 많습니다.</p>
+  <p>충압펌프는 배관의 수압을 일정하게 유지하는 작은 펌프입니다. 배관에서 물이 조금씩 새거나 스프링클러 헤드에서 소량의 물이 나가면 수압이 떨어지는데, 충압펌프가 이를 보충해 주펌프가 불필요하게 가동되는 것을 막습니다. 주펌프는 화재 시 대량의 물을 공급하는 펌프이고, 예비펌프는 주펌프가 고장 났을 때 대신 가동되는 펌프입니다. 두 펌프는 자동 교대 운전이 되도록 제어반이 설정돼 있어, 한쪽이 고장 나면 다른 쪽이 자동으로 기동합니다.</p>
+
+  <h2>펌프 선정 기준</h2>
+  <table>
+    <tr><th>설비 종류</th><th>필요 유량</th><th>필요 수압</th><th>펌프 선정 기준</th></tr>
+    <tr><td>옥내소화전 (1개)</td><td>130 L/min</td><td>170 kPa 이상</td><td>동시 사용 개수 반영</td></tr>
+    <tr><td>옥내소화전 (3개 동시)</td><td>390 L/min</td><td>170 kPa 이상</td><td>최고층 소화전 기준</td></tr>
+    <tr><td>스프링클러 (경급)</td><td>방호면적 × 4 L/min/m²</td><td>100 kPa 이상</td><td>설계 방호면적 기준</td></tr>
+    <tr><td>스프링클러 (중급)</td><td>방호면적 × 8 L/min/m²</td><td>100 kPa 이상</td><td>설계 방호면적 기준</td></tr>
+    <tr><td>옥외소화전</td><td>350 L/min</td><td>250 kPa 이상</td><td>최대 2개 동시 사용</td></tr>
+  </table>
+  <p>펌프를 선정할 때는 필요한 유량과 수압을 함께 계산해야 합니다. 유량은 동시에 사용하는 소화전 개수와 스프링클러 설계 방호면적을 기준으로 정하고, 수압은 가장 높은 위치의 소화전이나 스프링클러까지 물을 보낼 수 있는 압력으로 정합니다. 수압 계산에는 높이 손실과 배관 마찰 손실을 포함해야 합니다. 펌프 양정은 필요 수압을 9.81로 나눈 값이며, 여기에 여유를 더해 선정합니다. 펌프 성능 곡선을 확인해 설계 유량에서 필요한 양정이 나오는지 검증해야 합니다.</p>
+
+  <h2>압력 유지와 기동 설정</h2>
+  <p>소방펌프는 평상시에는 충압펌프만으로 배관 수압을 유지합니다. 배관 수압이 설정값 아래로 떨어지면 충압펌프가 기동하고, 수압이 더 떨어지면 주펌프가 기동합니다. 주펌프 기동 압력은 설계 압력보다 낮게 설정하며, 충압펌프 정지 압력보다 낮아야 두 펌프가 번갈아 기동하지 않습니다. 압력 스위치 설정이 잘못되면 주펌프가 자주 기동해 펌프 수명이 짧아지거나, 반대로 화재 시 기동이 늦어질 수 있습니다.</p>
+  <p>펌프 기동 방식은 자동과 수동이 있습니다. 자동 기동은 압력 스위치가 수압 저하를 감지해 펌프를 자동으로 기동시키는 방식이고, 수동 기동은 제어반의 버튼을 눌러 기동시키는 방식입니다. 화재 시에는 자동 기동이 원칙이며, 수동 기동은 점검 시 사용합니다. 펌프가 기동하면 정지 압력에 도달할 때까지 계속 운전하고, 수동으로 정지시켜야 합니다. 펌프가 자동으로 정지되지 않도록 설정하는 것은 화재가 완전히 진압되기 전에 펌프가 멈추는 것을 막기 위해서입니다.</p>
+
+  <h2>단계별 정기 점검 절차</h2>
+  <ol>
+    <li><strong>외관을 확인합니다.</strong> 펌프 본체와 배관, 밸브에 누수나 부식이 없는지, 고정 볼트가 느슨하지 않은지 확인합니다.</li>
+    <li><strong>압력 게이지를 확인합니다.</strong> 흡입 측과 토출 측 압력 게이지가 정상 범위인지 확인하고, 충압펌프가 수압을 유지하고 있는지 봅니다.</li>
+    <li><strong>제어반 상태를 확인합니다.</strong> 전원 램프와 자동·수동 전환 스위치, 고장 표시등이 정상인지 확인합니다.</li>
+    <li><strong>펌프를 시운전합니다.</strong> 말단 시험밸브를 열어 수압을 떨어뜨리고, 주펌프가 자동 기동하는지 확인합니다.</li>
+    <li><strong>유량과 압력을 측정합니다.</strong> 시험 배관에서 유량을 측정하고, 토출 압력이 설계값에 맞는지 확인합니다.</li>
+    <li><strong>예비펌프를 확인합니다.</strong> 주펌프 전원을 차단하고 예비펌프가 자동 기동하는지, 교대 운전이 정상인지 확인합니다.</li>
+    <li><strong>베어링과 윤활유를 점검합니다.</strong> 펌프 베어링 소음과 진동을 확인하고, 윤활유가 부족하면 보충합니다.</li>
+    <li><strong>점검 결과를 기록합니다.</strong> 측정값과 점검 내용을 기록하고, 이상 사항은 수리 일정을 잡습니다.</li>
+  </ol>
+
+  <h2>흔한 실수와 고장</h2>
+  <ul>
+    <li><strong>펌프 시운전 미실시:</strong> 펌프를 오래 가동하지 않으면 베어링이 고착되고 모터가 손상됩니다. 월 1회 이상 시운전하세요.</li>
+    <li><strong>압력 스위치 설정 오류:</strong> 기동 압력이 너무 높으면 주펌프가 자주 기동하고, 너무 낮으면 화재 시 기동이 늦어집니다.</li>
+    <li><strong>흡입 배관 공기 유입:</strong> 흡입 배관에 공기가 들어가면 펌프가 물을 끌어올리지 못합니다. 흡입 배관의 기밀성을 확인하세요.</li>
+    <li><strong>밸브 오조작:</strong> 펌프 토출 밸브나 흡입 밸브가 닫혀 있으면 펌프가 공회전해 손상됩니다. 밸브 상태를 항상 확인하세요.</li>
+    <li><strong>동결 방치:</strong> 겨울철 펌프실 난방이 안 되면 배관이 얼어 펌프가 작동하지 않습니다. 펌프실 온도를 5도 이상 유지하세요.</li>
+  </ul>
+
+  <h2>펌프실 관리와 정전 대책</h2>
+  <p>펌프실은 소방펌프가 설치된 전용 공간으로, 항상 접근 가능하고 적정 온도를 유지해야 합니다. 펌프실 문을 잠그거나 물건을 쌓아두면 화재 시 펌프를 조작할 수 없습니다. 펌프실에는 관계자 외 출입 금지 표지를 부착하고, 펌프 조작 방법을 안내문에 적어 두는 것이 좋습니다. 펌프실 조명은 항상 켜져 있어야 하며, 비상조명등도 함께 설치해야 합니다.</p>
+  <p>펌프실 온도는 5도 이상으로 유지해야 합니다. 겨울철 펌프실 난방이 안 되면 배관이 얼어 펌프가 작동하지 않습니다. 펌프실에 온도계를 설치하고, 겨울철에는 난방 상태를 매일 확인하세요. 배관에 보온재를 감아 동결을 예방하고, 보온재가 손상되면 제때 교체해야 합니다. 펌프실에 누수 감지기를 설치하면 배관 누수를 조기에 발견할 수 있습니다.</p>
+  <p>정전 시에도 소방펌프가 작동해야 합니다. 전동펌프는 정전이 되면 작동하지 않으므로, 예비 펌프로 디젤 엔진펌프를 설치하는 것이 일반적입니다. 엔진펌프는 전기가 없어도 디젤 엔진으로 펌프를 돌릴 수 있습니다. 엔진펌프는 연료가 충분히 있는지, 배터리가 정상인지, 시동이 잘 걸리는지 정기적으로 확인해야 합니다. 비상발전기가 있는 건물은 발전기 용량에 소방펌프 부하를 포함시켜야 합니다.</p>
+  <p>수조 관리도 펌프 성능과 직결됩니다. 옥상수조와 지하수조에 물이 충분한지, 수위계가 정상인지, 수조 내부에 이물질이 없는지 확인해야 합니다. 수조 수위가 낮으면 화재 시 물을 충분히 공급할 수 없습니다. 수조 청소와 소독은 정기적으로 실시하고, 수조 뚜껑이 제대로 닫혀 있는지 확인하세요. 수조 배수 밸브가 열려 있으면 물이 새어 나가니 밸브 상태를 함께 점검해야 합니다.</p>
+  <p>펌프 성능 시험은 매년 실시해야 합니다. 성능 시험에서는 펌프 토출 유량과 압력을 측정해 설계값과 비교합니다. 유량이 설계값보다 10% 이상 떨어지면 임펠러 마모나 배관 막힘을 의심해야 합니다. 펌프 베어링 소음과 진동도 함께 측정하고, 이상이 있으면 분해 점검을 받아야 합니다. 성능 시험 결과는 기록으로 보관하고, 설계 성능이 나오지 않으면 즉시 수리해야 합니다.</p>
+
+  <p>펌프 베어링 관리는 펌프 수명을 좌우합니다. 베어링에 그리스가 부족하면 소음이 커지고 진동이 생기며, 결국 베어링이 고착돼 펌프가 멈춥니다. 베어링 그리스는 6개월마다 보충하고, 2년마다 교체하는 것이 기준입니다. 그리스를 너무 많이 넣으면 베어링이 과열되니 적정량을 지키세요. 베어링 소음을 들을 때는 청진기를 사용하거나, 펌프 가동 중 진동을 측정해 이상 여부를 판단합니다.</p>
+  <p>커플링 정렬도 점검해야 합니다. 펌프와 모터를 연결하는 커플링이 틀어지면 진동이 생기고 베어링 수명이 짧아집니다. 커플링 고무가 마모되면 충격 흡수 기능이 떨어져 진동이 커집니다. 커플링 정렬은 다이얼 게이지로 측정하고, 허용 오차 이내로 조정해야 합니다. 커플링 고무는 2~3년마다 교체하는 것이 좋습니다. 커플링 볼트가 느슨하면 펌프 가동 중 소음이 생기니 조임 상태도 확인하세요.</p>
+  <p>제어반 관리도 소홀히 하면 안 됩니다. 제어반의 릴레이와 타이머, 표시등이 정상인지 매월 확인하세요. 릴레이 접점이 타면 펌프가 기동하지 않거나 멈추지 않을 수 있습니다. 제어반 내부에 먼지가 쌓이면 합선의 원인이 되니 청소해야 합니다. 제어반 배터리는 정전 시에도 제어반이 작동하도록 예비 전원을 공급합니다. 배터리는 2~3년마다 교체하고, 전압을 매월 확인하세요.</p>
+  <p>펌프실 배수도 점검해야 합니다. 배관이 새거나 펌프에서 물이 새면 펌프실 바닥에 물이 고여 전기 설비가 침수될 수 있습니다. 펌프실 바닥에 배수구가 있는지, 배수 펌프가 정상 작동하는지 확인하세요. 배수 펌프가 고장 나면 물이 고여 펌프 모터가 침수될 수 있습니다. 펌프실 누수 감지기를 설치하면 누수를 조기에 발견할 수 있습니다.</p>
+
+  <p>펌프 성능 곡선은 펌프 선정과 점검의 기준입니다. 성능 곡선은 유량에 따른 양정과 효율을 보여주는 그래프입니다. 펌프를 선정할 때는 설계 유량에서 필요한 양정이 나오는지 성능 곡선으로 확인해야 합니다. 점검 시에는 실제 유량과 압력을 측정해 성능 곡선과 비교합니다. 측정값이 성능 곡선보다 크게 떨어지면 임펠러 마모나 배관 막힘을 의심해야 합니다. 성능 곡선은 펌프 제조사에서 제공하며, 펌프실에 비치해 두는 것이 좋습니다.</p>
+
+  <p>펌프 흡입 배관도 정기적으로 점검해야 합니다. 흡입 배관에 공기가 들어가면 펌프가 물을 끌어올리지 못해 화재 시 물을 공급할 수 없습니다. 흡입 배관의 이음매와 밸브에서 공기가 새는지 확인하고, 흡입 수조 수위가 충분한지 점검하세요. 흡입 배관은 항상 물로 채워져 있어야 하며, 배관 최고점에 에어벤트를 설치해 공기를 빼낼 수 있어야 합니다.</p>
+
+  <h2>자주 묻는 질문</h2>
+  <h3>소방펌프는 얼마나 자주 점검해야 하나요?</h3>
+  <p>소방펌프는 매월 외관 점검과 시운전, 매년 작동 기능 점검과 종합정밀점검을 받아야 합니다. 월간 점검에서는 압력 게이지와 제어반 상태, 누수 여부를 확인하고 펌프를 시운전합니다. 연간 점검에서는 유량과 압력을 측정해 설계 성능이 나오는지 검증합니다. 점검 결과는 기록으로 보관해야 합니다.</p>
+  <h3>주펌프와 충압펌프는 어떻게 다른가요?</h3>
+  <p>주펌프는 화재 시 대량의 물을 공급하는 큰 펌프이고, 충압펌프는 평상시 배관 수압을 유지하는 작은 펌프입니다. 배관에서 물이 조금씩 새면 충압펌프가 보충하고, 화재로 수압이 크게 떨어지면 주펌프가 기동합니다. 충압펌프만으로 수압이 유지되지 않으면 배관 누수를 의심해야 합니다.</p>
+  <h3>펌프가 기동하지 않으면 어떻게 해야 하나요?</h3>
+  <p>먼저 제어반 전원과 자동·수동 전환 스위치를 확인하세요. 압력 스위치 설정이 잘못됐거나, 펌프 전원 차단기가 내려가 있는 경우가 많습니다. 모터가 타는 냄새가 나거나 소음이 심하면 즉시 전원을 차단하고 소방시설관리업체에 연락하세요. 펌프 고장은 화재 시 치명적이므로 즉시 수리해야 합니다.</p>
+
+  <div class="safety"><strong>안전 수칙:</strong> 소방펌프는 화재 시 생명을 지키는 핵심 설비입니다. 펌프실 문을 잠그거나 물건을 쌓아두지 마세요. 펌프 전원을 임의로 차단하지 말고, 점검 시에도 필요한 구역의 펌프는 가동 상태로 두세요. 펌프 고장이나 이상 소음이 들리면 즉시 소방시설관리업체에 연락하세요.</div>
+
+  <div class="related">
+    <h3>관련 계산기</h3>
+    <ul>
+      <li><a href="../index.html#calc-hydrant">소화전 수압 계산기</a> — 펌프에 필요한 수압과 양정을 확인하세요</li>
+      <li><a href="../index.html#calc-sprinkler">스프링클러 헤드 수 계산기</a> — 펌프가 공급할 스프링클러 규모를 확인하세요</li>
+    </ul>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h4>소방설비 허브</h4>
+        <p>소방시설 설계자와 건물 관계자를 위한 무료 소방설비 계산기와 실무 가이드. 소방시설법 · NFSC 기준.</p>
+        <p style="margin-top:8px">firepump.github.io/</p>
+      </div>
+      <div>
+        <h4>계산기</h4>
+        <ul>
+          <li><a href="../index.html#calc-sprinkler">스프링클러 헤드 수</a></li>
+          <li><a href="../index.html#calc-ext">소화기 소요량</a></li>
+          <li><a href="../index.html#calc-hydrant">소화전 수압</a></li>
+          <li><a href="../index.html#calc-detector">감지기 배치 간격</a></li>
+          <li><a href="../index.html#calc-evac">피난 시간 산정</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>가이드</h4>
+        <ul>
+          <li><a href="sprinkler-installation.html">스프링클러 설치 가이드</a></li>
+          <li><a href="extinguisher-use.html">소화기 올바른 사용법</a></li>
+          <li><a href="fire-detector.html">화재감지기 설치와 관리</a></li>
+          <li><a href="evacuation-facilities.html">피난설비와 대피 요령</a></li>
+          <li><a href="fire-pump.html">소방펌프 점검과 관리</a></li>
+          <li><a href="regular-inspection.html">소방시설 정기점검 가이드</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">© 2026 소방설비 허브 · 모든 계산은 브라우저에서 처리됩니다 · 계산 결과는 추정치입니다. 소방시설법과 화재안전기준(NFSC)을 확인하세요.</div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>스프링클러 설치 가이드 — 소방설비 허브</title>
+<meta name="description" content="스프링클러 설치 가이드: 헤드 종류 선택, 배치 간격, 배관 구성, 알람밸브와 펌프 연동까지 설치 전 알아야 할 실무 기준을 정리했습니다.">
+<meta name="theme-color" content="#0f172a">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<style>
+:root{--navy:#0f172a;--navy2:#1e293b;--amber:#f59e0b;--amber-dark:#d97706;--amber-bg:#fef3c7;--bg:#f1f5f9;--card:#fff;--text:#0f172a;--muted:#64748b;--border:#e2e8f0;--green:#15803d;--green-bg:#dcfce7;--red:#b91c1c;--red-bg:#fee2e2;--radius:14px;--shadow:0 1px 3px rgba(15,23,42,.08),0 4px 14px rgba(15,23,42,.06)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans KR",Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
+.wrap{max-width:860px;margin:0 auto;padding:0 16px}
+a{color:var(--amber-dark)}
+header{background:var(--navy);color:#fff;position:sticky;top:0;z-index:50;box-shadow:0 2px 10px rgba(0,0,0,.25)}
+.header-in{display:flex;align-items:center;gap:14px;padding:13px 16px;max-width:1080px;margin:0 auto;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff;flex:1;min-width:200px}
+.brand .mark{width:38px;height:38px;border-radius:9px;background:var(--amber);color:var(--navy);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:19px;flex:none}
+.brand b{font-size:19px;letter-spacing:.2px}
+.brand b span{color:var(--amber)}
+.brand small{display:block;font-size:11.5px;color:#94a3b8;font-weight:400}
+nav.main-nav{display:flex;gap:4px;flex-wrap:wrap}
+nav.main-nav a{color:#cbd5e1;text-decoration:none;font-size:14px;font-weight:600;padding:8px 11px;border-radius:8px}
+nav.main-nav a:hover{background:var(--navy2);color:#fff}
+.article{padding:26px 0 12px}
+.back{margin-bottom:10px}
+.back a{font-weight:700;text-decoration:none}
+.back a:hover{text-decoration:underline}
+.crumb{font-size:12.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--amber-dark);margin-bottom:6px}
+.article h1{font-size:clamp(26px,4.5vw,34px);line-height:1.25;margin-bottom:10px}
+.lede{font-size:17px;color:#334155;margin-bottom:22px}
+.article h2{font-size:21px;margin:28px 0 8px;padding-top:6px;border-top:2px solid var(--amber);display:inline-block}
+.article h3{font-size:17px;margin:18px 0 6px}
+.article p{font-size:15.5px;color:#1e293b;margin-bottom:12px}
+.article ul,.article ol{margin:0 0 14px 22px;font-size:15.5px;color:#1e293b}
+.article li{margin-bottom:6px}
+.article table{border-collapse:collapse;width:100%;font-size:14px;margin:12px 0 16px;background:#fff;border-radius:10px;overflow:hidden;box-shadow:var(--shadow)}
+.article th{background:var(--navy);color:#fff;text-align:left;padding:10px 12px}
+.article td{padding:9px 12px;border-bottom:1px solid var(--border)}
+.article tr:nth-child(even) td{background:#f8fafc}
+.formula{font-size:13.5px;color:var(--muted);background:#fff;border:1px dashed var(--border);border-radius:8px;padding:10px 12px;margin:12px 0}
+.formula code{color:var(--navy);font-weight:600}
+.safety{background:var(--red-bg);border-left:4px solid var(--red);border-radius:10px;padding:14px 16px;margin:22px 0;font-size:14.5px;color:#7f1d1d}
+.related{background:var(--amber-bg);border:1px solid #fde68a;border-radius:12px;padding:16px 18px;margin:22px 0}
+.related h3{font-size:15px;margin:0 0 8px}
+.related ul{margin:0 0 0 20px}
+.related li{margin-bottom:4px}
+footer{background:var(--navy);color:#94a3b8;margin-top:44px;padding:30px 0 26px}
+footer .cols{display:grid;grid-template-columns:1fr;gap:20px}
+@media(min-width:640px){footer .cols{grid-template-columns:2fr 1fr 1fr}}
+footer h4{color:#fff;font-size:15px;margin-bottom:10px}
+footer p,footer a{font-size:13.5px;color:#94a3b8;text-decoration:none}
+footer a:hover{color:#fff}
+footer ul{list-style:none}
+footer li{margin-bottom:6px}
+.copy{border-top:1px solid #1e293b;margin-top:22px;padding-top:16px;font-size:12.5px;text-align:center}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-in">
+    <a class="brand" href="../index.html"><span class="mark">소</span><span><b>소방설비 <span>허브</span></b><small>firepump.github.io/</small></span></a>
+    <nav class="main-nav">
+      <a href="../index.html#calculators">계산기</a>
+      <a href="../index.html#reference">기준표</a>
+      <a href="../index.html#guides">가이드</a>
+      <a href="../index.html#faq">자주 묻는 질문</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap article">
+  <p class="back"><a href="../index.html">&larr; 소방설비 허브로 돌아가기</a></p>
+  <p class="crumb">가이드 / 스프링클러</p>
+  <h1>스프링클러 설치 가이드</h1>
+  <p class="lede">스프링클러는 화재 초기에 자동으로 물을 뿌려 화재를 진압하는 가장 효과적인 설비입니다. 화재 통계에 따르면 스프링클러가 설치된 건물에서는 화재 사망률이 크게 낮아집니다. 헤드는 화재 열을 감지해 정해진 온도에서 스스로 열리고, 해당 구역에만 물을 뿌려 화재 확산을 막습니다. 이 가이드에서는 헤드 종류 선택, 배치 간격, 배관 구성, 알람밸브와 펌프 연동까지 설치 전 알아야 할 실무 기준을 정리했습니다.</p>
+
+  <h2>스프링클러의 작동 원리</h2>
+  <p>스프링클러 헤드 안에는 열에 민감한 감열체가 들어 있습니다. 유리벌브형은 알코올이 든 유리관이 화재 열로 팽창해 깨지면서 헤드가 열리고, 퓨지블링크형은 저융점 금속이 녹으면서 헤드가 열립니다. 감열체가 반응하는 온도는 보통 68도이며, 주방이나 보일러실처럼 평소 온도가 높은 곳에는 79도나 93도 헤드를 사용합니다. 헤드가 열리면 가압된 배관의 물이 분출해 디플렉터에 부딪혀 넓게 퍼지며 화재를 진압합니다.</p>
+  <p>중요한 점은 화재가 난 구역의 헤드만 열린다는 것입니다. 영화에서처럼 건물 전체 헤드가 동시에 터지는 일은 없습니다. 헤드 하나가 커버하는 방호 면적은 보통 12제곱미터이며, 화재가 커지면 인접 헤드가 차례로 열립니다. 헤드가 열리면 배관의 수압이 떨어지고 알람밸브가 작동해 경보가 울리며, 펌프가 가동돼 물을 계속 공급합니다. 화재가 진압된 뒤에는 헤드를 교체하고 시스템을 복구해야 합니다.</p>
+
+  <h2>헤드 종류와 선택 기준</h2>
+  <table>
+    <tr><th>헤드 종류</th><th>특징</th><th>적합한 장소</th></tr>
+    <tr><td>상향형 (Upright)</td><td>위쪽으로 물을 뿌림, 배관 위에 설치</td><td>천장이 없는 공간, 기계실</td></tr>
+    <tr><td>하향형 (Pendent)</td><td>아래쪽으로 물을 뿌림, 가장 일반적</td><td>일반 사무실, 상가, 주거</td></tr>
+    <tr><td>측벽형 (Sidewall)</td><td>벽에서 옆으로 물을 뿌림</td><td>천장 설치가 어려운 복도, 객실</td></tr>
+    <tr><td>오목형 (Recessed)</td><td>천장 안에 매립, 덮개 장착</td><td>호텔, 고급 사무실, 미관 중시 공간</td></tr>
+    <tr><td>조기진압형 (ESFR)</td><td>대유량, 빠른 반응</td><td>고층 랙 창고, 물류센터</td></tr>
+  </table>
+  <p>헤드를 선택할 때는 천장 구조와 용도를 함께 봐야 합니다. 일반 사무실과 상가는 하향형이 표준이며, 천장 마감재가 없는 기계실이나 창고는 상향형을 씁니다. 호텔 객실처럼 미관이 중요한 곳은 오목형을 사용하고, 고층 랙이 있는 물류창고는 대유량으로 화재를 조기에 진압하는 ESFR 헤드를 사용합니다. 헤드의 방수 밀도는 위험도에 따라 달라지며, 경급 위험은 제곱미터당 분당 4리터, 중급 위험은 8리터, 상급 위험은 12리터 이상이 기준입니다.</p>
+
+  <h2>배치 간격과 장애물 기준</h2>
+  <p>헤드 간격은 방호 면적을 기준으로 정합니다. 표준형 헤드 1개가 담당하는 면적은 12제곱미터이며, 이 면적을 정사각형으로 환산하면 한 변이 약 3.5미터가 됩니다. 헤드와 헤드 사이의 최대 간격은 보통 3.6미터, 헤드와 벽 사이의 최대 거리는 1.8미터입니다. 천장 높이가 높아지면 헤드 1개당 방호 면적이 줄어듭니다. 천장 높이 4미터 미만은 12제곱미터, 4미터 이상에서는 9제곱미터 이하로 설계하는 것이 일반적입니다.</p>
+  <p>보와 덕트, 조명기구 같은 장애물도 고려해야 합니다. 헤드에서 나온 물이 장애물에 막히면 화재 구역에 물이 닿지 않습니다. 보 아래에 헤드를 설치할 때는 보 높이에 따라 헤드 위치를 조정하고, 덕트 폭이 1.2미터를 넘으면 덕트 아래에도 헤드를 추가해야 합니다. 헤드와 천장 사이의 거리도 중요합니다. 헤드가 천장에서 너무 멀리 떨어지면 열이 헤드까지 도달하는 데 시간이 걸려 반응이 늦어집니다. 표준형 헤드는 천장에서 75~300mm 이내에 설치하는 것이 기준입니다.</p>
+
+  <h2>단계별 설치 절차</h2>
+  <ol>
+    <li><strong>설계 도면을 확인합니다.</strong> 방호 구역과 위험도를 확인하고, 헤드 배치도와 배관 계통도를 검토합니다. 천장 높이와 보, 덕트 위치를 현장에서 다시 확인합니다.</li>
+    <li><strong>배관을 설치합니다.</strong> 급수 본관에서 분기해 주배관, 지배관, 가지배관 순서로 설치합니다. 배관 지지는 화재 시에도 떨어지지 않도록 견고하게 고정합니다.</li>
+    <li><strong>헤드를 장착합니다.</strong> 헤드 전용 렌치로 규정 토크에 맞춰 조입니다. 일반 렌치로 조이면 헤드가 손상되거나 감열체가 파손될 수 있습니다.</li>
+    <li><strong>알람밸브를 설치합니다.</strong> 습식 알람밸브를 주배관에 설치하고, 압력 스위치와 경보 배선을 연결합니다. 알람밸브는 점검과 유지보수가 쉬운 위치에 둡니다.</li>
+    <li><strong>펌프와 수조를 연결합니다.</strong> 소방펌프와 옥상수조, 지하수조를 배관으로 연결하고, 펌프 기동 압력을 설정합니다.</li>
+    <li><strong>수압 시험을 합니다.</strong> 배관에 물을 채워 설계 압력의 1.5배로 가압하고, 2시간 동안 누수가 없는지 확인합니다.</li>
+    <li><strong>작동 시험을 합니다.</strong> 말단 시험밸브를 열어 헤드 작동을 모의하고, 알람이 울리고 펌프가 기동하는지 확인합니다.</li>
+    <li><strong>완공 검사를 받습니다.</strong> 소방시설 완공검사 신청 후 소방서 검사를 받고, 검사 합격 후 사용 승인을 받습니다.</li>
+  </ol>
+
+  <h2>흔한 실수와 고장</h2>
+  <ul>
+    <li><strong>헤드 간격 과다:</strong> 방호 면적을 초과해 헤드를 배치하면 화재 구역에 물이 닿지 않습니다. 천장 높이와 장애물을 반영해 간격을 다시 계산하세요.</li>
+    <li><strong>장애물 아래 헤드 누락:</strong> 폭이 넓은 덕트나 보 아래에 헤드를 설치하지 않으면 사각지대가 생깁니다. 덕트 폭 1.2미터 이상이면 아래쪽 헤드가 필요합니다.</li>
+    <li><strong>잘못된 감열 온도 선택:</strong> 평소 온도가 높은 주방이나 보일러실에 68도 헤드를 쓰면 오작동합니다. 장소별 적정 감열 온도를 확인하세요.</li>
+    <li><strong>헤드 도장:</strong> 헤드에 페인트를 칠하면 감열체 반응이 늦어지거나 막힐 수 있습니다. 도장된 헤드는 반드시 교체해야 합니다.</li>
+    <li><strong>동결 방치:</strong> 겨울철 난방이 안 되는 공간의 배관이 얼면 헤드가 작동하지 않습니다. 건식 시스템이나 부동액 충전을 검토하세요.</li>
+  </ul>
+
+  <h2>스프링클러 유지관리와 동결 대책</h2>
+  <p>스프링클러는 설치보다 유지관리가 더 중요합니다. 아무리 잘 설계된 설비라도 점검이 소홀하면 화재 시 작동하지 않을 수 있습니다. 매월 헤드 상태와 알람밸브, 배관 수압을 확인하고, 매년 종합정밀점검을 받아야 합니다. 헤드에 먼지가 쌓이면 감열체 반응이 늦어지니, 부드러운 브러시로 청소하세요. 헤드 주변에 물건을 쌓아두면 물이 화재 구역에 닿지 않으므로, 헤드 아래 0.5미터 이내에는 물건을 두지 않는 것이 좋습니다.</p>
+  <p>헤드 교체 시에는 반드시 같은 종류와 감열 온도의 헤드를 사용해야 합니다. 68도 헤드가 설치된 곳에 93도 헤드를 끼우면 화재 시 반응이 늦어집니다. 헤드를 교체할 때는 배관 밸브를 잠그고, 교체 후에는 밸브를 다시 열어 수압을 확인해야 합니다. 교체한 헤드는 종류와 설치 날짜를 기록해 두세요. 헤드 수명은 보통 10년이며, 수명이 지난 헤드는 감도가 떨어지니 교체 계획을 세워야 합니다.</p>
+  <p>겨울철 동결은 스프링클러의 가장 큰 적입니다. 난방이 안 되는 공간의 배관이 얼면 헤드가 작동하지 않고, 배관이 얼어 터지면 큰 물 피해가 생깁니다. 동결 위험이 있는 공간에는 건식 스프링클러 시스템을 설치하는 것이 좋습니다. 건식 시스템은 평상시 배관에 물 대신 압축 공기를 채워두고, 화재 시 헤드가 열리면 공기가 빠져나가며 물이 공급되는 방식입니다. 건식 시스템은 반응 속도가 습식보다 다소 느리지만 동결 걱정이 없습니다.</p>
+  <p>부동액 충전도 동결 대책 중 하나입니다. 배관에 부동액을 섞은 물을 채우면 어는점이 낮아져 동결을 막을 수 있습니다. 다만 부동액은 시간이 지나면 농도가 떨어지므로 매년 농도를 측정해야 합니다. 부동액이 새면 환경 오염이 될 수 있으니 누수 여부를 정기적으로 확인하세요. 난방이 되는 건물에서는 배관 보온재를 감아 동결을 예방할 수 있습니다. 보온재가 손상되면 제때 교체해야 합니다.</p>
+  <p>알람밸브와 펌프도 정기 점검이 필요합니다. 알람밸브는 헤드가 열렸을 때 경보를 울리고 펌프를 기동시키는 장치입니다. 알람밸브의 압력 게이지와 경보 배선을 매월 확인하고, 말단 시험밸브를 열어 작동 시험을 하세요. 펌프는 월 1회 이상 시운전해 베어링 고착을 막아야 합니다. 펌프실 온도는 5도 이상으로 유지하고, 펌프실 문을 잠그거나 물건을 쌓아두지 마세요. 화재 시 펌프실에 바로 접근할 수 있어야 합니다.</p>
+
+  <p>말단 시험밸브는 스프링클러 작동을 모의 시험하는 장치입니다. 매월 말단 시험밸브를 열어 헤드 작동을 모의하고, 알람이 울리고 펌프가 기동하는지 확인해야 합니다. 시험 후에는 밸브를 닫고 알람을 복구해야 합니다. 시험을 하지 않으면 알람밸브 고장을 발견하지 못해 화재 시 경보가 울리지 않을 수 있습니다. 시험 결과는 기록으로 남기고, 이상이 있으면 즉시 수리하세요.</p>
+  <p>배관 내부 부식도 주의해야 합니다. 배관 안에 물이 고여 있으면 미생물 부식(MIC)이 생겨 배관이 얇아지고 구멍이 날 수 있습니다. 배관 부식은 겉으로 보이지 않으므로, 정기 점검 시 배관 내부를 확인해야 합니다. 배관 수명이 20년을 넘으면 내부 부식 검사를 받는 것이 좋습니다. 부식이 심한 배관은 부분 교체하거나 전체 교체를 검토해야 합니다. 배관에 질소 충전을 하면 내부 부식을 늦출 수 있습니다.</p>
+  <p>헤드 교체 이력을 관리하면 유지보수가 쉬워집니다. 헤드를 교체할 때마다 교체 날짜와 종류, 위치를 기록해 두세요. 예비 헤드는 설치된 헤드 종류별로 몇 개씩 비치해 두는 것이 좋습니다. 화재로 헤드가 열렸을 때 예비 헤드가 없으면 시스템 복구가 늦어집니다. 예비 헤드는 서늘하고 건조한 곳에 보관하고, 감열체가 손상되지 않도록 주의하세요.</p>
+
+  <h2>자주 묻는 질문</h2>
+  <h3>스프링클러 헤드 하나가 터지면 물 피해가 크지 않나요?</h3>
+  <p>헤드 하나에서 분출되는 물은 분당 약 80리터입니다. 화재가 진압되는 데는 보통 몇 분이면 충분하므로, 화재가 그대로 번졌을 때의 피해에 비하면 물 피해는 훨씬 작습니다. 화재 진압 후에는 헤드를 교체하고 배관 밸브를 잠가 추가 누수를 막습니다. 화재보험에서도 스프링클러 작동으로 인한 물 피해는 보상 대상입니다.</p>
+  <h3>스프링클러와 화재감지기는 어떻게 다른가요?</h3>
+  <p>화재감지기는 화재를 감지해 경보를 울리는 설비이고, 스프링클러는 화재를 직접 진압하는 설비입니다. 감지기는 연기나 열을 감지해 사람들에게 대피를 알리고, 스프링클러는 화재가 난 구역에 물을 뿌려 화재를 끄거나 확산을 막습니다. 두 설비는 함께 설치되는 경우가 많으며, 감지기가 먼저 작동해 경보를 울리고, 화재가 커지면 스프링클러가 작동합니다.</p>
+  <h3>스프링클러 점검은 얼마나 자주 해야 하나요?</h3>
+  <p>스프링클러는 매월 외관 점검과 작동 기능 점검, 매년 종합정밀점검을 받아야 합니다. 점검 항목에는 헤드 상태, 알람밸브 작동, 펌프 기동, 배관 수압, 말단 시험밸브 작동 등이 포함됩니다. 점검 결과는 기록으로 보관하고, 불량 사항은 즉시 수리해야 합니다.</p>
+
+  <div class="safety"><strong>안전 수칙:</strong> 스프링클러 설비는 화재 시 생명을 지키는 핵심 설비입니다. 헤드에 물건을 걸거나 페인트를 칠하지 마세요. 배관 밸브를 임의로 잠그지 말고, 점검 중에도 필요한 구역의 밸브는 열어 두세요. 설비 고장이나 오작동이 의심되면 즉시 소방시설관리업체에 연락하세요.</div>
+
+  <div class="related">
+    <h3>관련 계산기</h3>
+    <ul>
+      <li><a href="../index.html#calc-sprinkler">스프링클러 헤드 수 계산기</a> — 방호 면적에 필요한 헤드 수를 확인하세요</li>
+      <li><a href="../index.html#calc-hydrant">소화전 수압 계산기</a> — 스프링클러에 필요한 수압을 확인하세요</li>
+    </ul>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h4>소방설비 허브</h4>
+        <p>소방시설 설계자와 건물 관계자를 위한 무료 소방설비 계산기와 실무 가이드. 소방시설법 · NFSC 기준.</p>
+        <p style="margin-top:8px">firepump.github.io/</p>
+      </div>
+      <div>
+        <h4>계산기</h4>
+        <ul>
+          <li><a href="../index.html#calc-sprinkler">스프링클러 헤드 수</a></li>
+          <li><a href="../index.html#calc-ext">소화기 소요량</a></li>
+          <li><a href="../index.html#calc-hydrant">소화전 수압</a></li>
+          <li><a href="../index.html#calc-detector">감지기 배치 간격</a></li>
+          <li><a href="../index.html#calc-evac">피난 시간 산정</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>가이드</h4>
+        <ul>
+          <li><a href="sprinkler-installation.html">스프링클러 설치 가이드</a></li>
+          <li><a href="extinguisher-use.html">소화기 올바른 사용법</a></li>
+          <li><a href="fire-detector.html">화재감지기 설치와 관리</a></li>
+          <li><a href="evacuation-facilities.html">피난설비와 대피 요령</a></li>
+          <li><a href="fire-pump.html">소방펌프 점검과 관리</a></li>
+          <li><a href="regular-inspection.html">소방시설 정기점검 가이드</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">© 2026 소방설비 허브 · 모든 계산은 브라우저에서 처리됩니다 · 계산 결과는 추정치입니다. 소방시설법과 화재안전기준(NFSC)을 확인하세요.</div>
+  </div>
+</footer>
+
+</body>
+</html>
